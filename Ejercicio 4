@@ -1,0 +1,39 @@
+void imprimeVector(vector<int> v){
+    for (int i=0; i<v.size(); i=i+1){
+        std :: cout << v[i] << std :: endl ;
+    }
+}
+
+/* // Dado un vector v y un entero k, rotar k posiciones los elementos de v.
+// [1,2,3,4,5,6] rotado 2, deberia dar [3,4,5,6,1,2].
+    0 1 2 3 4 5                         0 1 2 3 4 5    */
+
+vector<int> rotar(vector<int> v, int k){
+    vector<int> vectorRotado = {} ;
+    int i = k ;
+    while(i<v.size()){
+        vectorRotado.push_back(v[i]);
+        i = i + 1 ;
+    }
+    i = 0 ;
+    while (i<k){
+        vectorRotado.push_back(v[i]) ;
+        i = i + 1 ;
+    }
+    return vectorRotado ;
+}
+
+int main() {
+    vector<int> vectorUno;
+    int a;
+    int r;
+    for (int i=0; i<4; i=i+1) {
+        std::cout << "Ingrese valor del vector" << std::endl;
+        std::cin >> a ;
+        vectorUno.push_back(a) ;
+    }
+    std :: cout << "Ingrese numero de rotacion" << std :: endl ;
+    std :: cin >> r ;
+    imprimeVector(rotar(vectorUno,r));
+    return 0;
+}
