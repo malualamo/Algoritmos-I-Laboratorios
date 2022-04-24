@@ -1,0 +1,25 @@
+void imprimeVector(vector<int> v){
+    for (int i=0; i<v.size(); i=i+1){
+        std :: cout << v[i] << std :: endl ;
+    }
+}
+
+vector<int> reverso(vector<int> v){
+    vector<int> vectorReverso = {} ;
+    for ( int i = v.size() - 1 ; i>=0 ; i=i-1){
+        vectorReverso.push_back(v[i]);
+    }
+    return vectorReverso ;
+}
+
+int main() {
+    vector<int> vectorUno;
+    int a;
+    for (int i=0; i<4; i=i+1) {
+        std::cout << "Ingrese valor del vector" << std::endl;
+        std::cin >> a ;
+        vectorUno.push_back(a) ;
+    }
+    imprimeVector(reverso(vectorUno));
+    return 0;
+}
