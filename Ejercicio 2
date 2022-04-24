@@ -1,0 +1,26 @@
+/* Ejercicio 2 */
+
+int mayor(vector<int> v){
+    int elementomayor = 0 ;
+    for (int i=0; i < v.size(); i=i+1){
+        if (v[i]>elementomayor){
+            elementomayor = v[i];
+        }
+        }
+    return elementomayor ;
+}
+
+int main() {
+    vector<int> vectorUno;
+    int a;
+    int b;
+    for (int i=0; i<4; i=i+1) {
+        std::cout << "Ingrese valor del vector" << std::endl;
+        std::cin >> a ;
+        vectorUno.push_back(a) ;
+    }
+    std :: cout << "Ingrese valor que divida" << std :: endl ;
+    std :: cin >> b;
+    std :: cout << "1 si divide 0 si no divide:     " << mayor(vectorUno) << std :: endl ;
+    return 0;
+}
