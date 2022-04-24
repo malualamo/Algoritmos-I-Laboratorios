@@ -1,0 +1,5 @@
+void imprimeVector(vector<int> v){
+    for (int i=0; i<v.size(); i=i+1){
+        std :: cout << v[i] << std :: endl ;
+    }
+}
