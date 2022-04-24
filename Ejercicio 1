@@ -1,0 +1,31 @@
+bool divide(vector<int> v, int a){
+    // Dados un vector v y un int a, decide si a divide a todos los numeros de v.
+    int i = 0;
+    bool res ;
+    while (i<v.size()){
+        if (v[i] % a == 0){
+            res = true ;
+            i = i+1 ;
+        } else {
+            res = false ;
+            i = v.size() ;
+        }
+    }
+    return res ;
+}
+
+
+int main() {
+    vector<int> vectorUno;
+    int a;
+    int b;
+    for (int i=0; i<4; i=i+1) {
+        std::cout << "Ingrese valor del vector" << std::endl;
+        std::cin >> a;
+        vectorUno.push_back(a) ;
+    }
+    std :: cout << "Ingrese valor que divida" << std :: endl ;
+    std :: cin >> b;
+    std :: cout << "1 si divide 0 si no divide:     " << divide(vectorUno, b) << std :: endl ;
+    return 0;
+}
