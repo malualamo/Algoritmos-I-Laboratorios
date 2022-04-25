@@ -1,25 +1,49 @@
-bool estaOrdenado(vector<int> v){
+bool esCreciente(vector<int> v){
     int i = 1 ;
-    int primerElemento = v[0] ;
-    if (primerElemento > v[1] ) {
-        while(i<v.size()){
-            if (primerElemento <= v[i]){
-                primerElemento = v[i] ;
-                i = i + 1 ;
-            } else {
-                return false ;
-            }
-        }
-        return true;
-    } else {
-        while(i<v.size()){
-            if (primerElemento >= v[i]){
-                primerElemento = v[i] ;
-                i = i + 1 ;
-            } else {
-                return false ;
-            }
+    int elementoAnterior = v[0] ;
+    while(i<v.size()){
+        if (elementoAnterior <= v[i]){
+            elementoAnterior = v[i] ;
+            i = i + 1 ;
+        } else {
+            return false ;
         }
     }
     return true ;
+}
+
+bool esDecreciente(vector<int> v){
+    int i = 1 ;
+    int elementoAnterior = v[0] ;
+    while(i<v.size()){
+        if (elementoAnterior >= v[i]){
+            elementoAnterior = v[i] ;
+            i = i + 1 ;
+        } else {
+            return false ;
+        }
+    }
+    return true ;
+
+}
+
+bool estaOrdenado(vector<int> v){
+    if (esCreciente(v) || esDecreciente(v)){
+        return true ;
+    } else {
+        return false ;
+    }
+}
+
+
+int main() {
+    vector<int> vectorUno;
+    int a;
+    for (int i=0; i<4; i=i+1) {
+        std::cout << "Ingrese valor del vector" << std::endl;
+        std::cin >> a;
+        vectorUno.push_back(a);
+    }
+    std :: cout << estaOrdenado(vectorUno) << std :: endl ;
+     return 0;
 }
